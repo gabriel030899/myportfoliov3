@@ -1,11 +1,14 @@
-import { useState } from 'react'
+import { React } from 'react'
+import MyInfo from '../components/MyInfo'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1>Hello World</h1>
+      <div className='w-screen h-screen p-3 bg-sky-950'>
+        <MyInfo />
+      </div>
+      
     </>
   )
 }
