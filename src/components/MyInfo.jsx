@@ -6,7 +6,7 @@ import { faSun } from '@fortawesome/free-regular-svg-icons'
 
 function MyInfo() {
   return (
-    <div className='w-2/5 h-full py-4 px-2 bg-sky-950 border-1 border-gray-300 rounded-md'>
+    <section className='w-2/5 h-full py-4 px-2 bg-sky-950 border-1 border-gray-300 rounded-md'>
         <div className='w-full h-10'>
             <span className='underline'>gabrielzanella.com.br</span>
         </div>
@@ -42,7 +42,7 @@ function MyInfo() {
                 <li><b className='text-sky-500'>Other:</b> Azure DevOps, Github DevOps, Docker</li>
             </ul>
         </div>
-    </div>
+    </section>
   )
 }
 
