@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <div className='w-screen h-screen p-3 bg-sky-950 flex'>
+      <div className='w-screen h-screen p-3 bg-gray-900 flex gap-2'>
         <MyInfo />
         <NavScreen />
       </div>
