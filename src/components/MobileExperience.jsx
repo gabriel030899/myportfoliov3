@@ -1,6 +1,7 @@
 import React from 'react'
 import { useLanguage } from '../contexts/LanguageContext'
 
+// Reusing the same experiences data structure
 const experiences = [
   {
     id: 1,
@@ -197,44 +198,45 @@ const experiences = [
   },
 ]
 
-function Experience() {
+function MobileExperience() {
   const { language, theme } = useLanguage()
   const labels = language === 'pt' ? { title: 'Experiências' } : { title: 'Experience' }
+  
   return (
-    <section className="w-full h-full px-2 py-4 flex flex-col">
-      <header className="mb-4">
-        <h1 className="text-xl font-semibold">{labels.title}</h1>
-      </header>
+    <div className='w-full h-full overflow-y-auto pb-20 px-4 pt-4'>
+      <h1 className='text-2xl font-bold mb-4'>{labels.title}</h1>
 
-      <div className="flex flex-col gap-6 overflow-y-auto flex-1 min-h-0 pr-1">
+      <div className="flex flex-col gap-4">
         {experiences.map((exp) => (
-          <article key={exp.id} className={`rounded-md p-4 ${
+          <article key={exp.id} className={`rounded-md p-3 ${
             theme === 'light' 
               ? 'border border-gray-400 bg-white' 
               : 'border border-gray-600 bg-gray-800'
           }`}>
-            <div className="flex flex-wrap items-baseline gap-2 mb-1">
-              <h2 className="text-lg font-bold">{typeof exp.role === 'object' ? exp.role[language] : exp.role}</h2>
-              <span className={theme === 'light' ? 'text-gray-500' : 'text-gray-400'}>•</span>
-              <span className="font-medium">{exp.company}</span>
-              <span className="ml-auto text-sm text-gray-500">{typeof exp.period === 'object' ? exp.period[language] : exp.period}</span>
+            <div className="flex flex-col gap-1 mb-2">
+              <h2 className="text-base font-bold">{typeof exp.role === 'object' ? exp.role[language] : exp.role}</h2>
+              <div className="flex items-center gap-2 text-sm">
+                <span className="font-medium">{exp.company}</span>
+                <span className={theme === 'light' ? 'text-gray-500' : 'text-gray-400'}>•</span>
+                <span className="text-xs text-gray-500">{typeof exp.period === 'object' ? exp.period[language] : exp.period}</span>
+              </div>
             </div>
             {exp.location && (
-              <div className="text-sm text-gray-500 mb-3">
+              <div className="text-xs text-gray-500 mb-2">
                 {typeof exp.location === 'object' ? exp.location[language] : exp.location}
                 {exp.employmentType ? ` · ${typeof exp.employmentType === 'object' ? exp.employmentType[language] : exp.employmentType}` : ''}
               </div>
             )}
-            <ul className="list-disc pl-5 space-y-1 mb-3">
+            <ul className="list-disc pl-4 space-y-1 mb-3 text-sm">
               {(typeof exp.bullets === 'object' && !Array.isArray(exp.bullets) ? exp.bullets[language] : exp.bullets)?.map((b, i) => (
                 <li key={i}>{b}</li>
               ))}
             </ul>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1">
               {exp.skills.map((s, i) => (
                 <span
                   key={i}
-                  className="bg-sky-700 text-white border border-white py-1 px-2 rounded-md text-sm"
+                  className="bg-sky-700 text-white border border-white py-0.5 px-2 rounded-md text-xs"
                 >
                   {language === 'pt' && s.pt ? s.pt : s.name}
                 </span>
@@ -243,8 +245,8 @@ function Experience() {
           </article>
         ))}
       </div>
-    </section>
+    </div>
   )
 }
 
-export default Experience
+export default MobileExperience

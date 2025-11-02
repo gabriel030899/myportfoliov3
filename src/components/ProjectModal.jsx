@@ -47,13 +47,13 @@ function ProjectModal({ isOpen, project, onClose }) {
           </div>
 
           <div className="flex flex-col gap-4 min-w-0">
-            <p className="leading-relaxed">{project.description}</p>
+            <p className="leading-relaxed">{typeof project.description === 'object' ? project.description[language] : project.description}</p>
 
             <div>
               <h3 className="font-semibold mb-2">{t.techs}</h3>
               <div className="flex flex-wrap gap-2">
                 {project.skills?.map((skill, idx) => (
-                  <span key={idx} className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 py-1 px-2 rounded-md text-sm">
+                  <span key={idx} className="bg-sky-700 text-white border border-white py-1 px-2 rounded-md text-sm">
                     {skill.name}
                   </span>
                 ))}

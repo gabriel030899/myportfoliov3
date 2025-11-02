@@ -13,7 +13,7 @@ const myLinks = [
     { name: 'Phone', url: '+55 (19) 9 9900-9796' }
 ]
 
-function MyInfo() {
+function MobileMyInfo() {
     const { language, setLanguage, theme, setTheme } = useLanguage()
     const t = {
         pt: {
@@ -39,58 +39,65 @@ function MyInfo() {
             phoneLabel: '',
         },
     }[language]
+    
   return (
-    <section className='w-2/5 h-full py-4 px-2'>
-        <div className='w-full h-10'>
-            <span className='underline'>gabrielzanella.com.br</span>
-        </div>
+    <div className='w-full h-full overflow-y-auto pb-20 px-4 pt-4'>
         <div className='flex justify-between items-center mb-4'>
-            <h1 className='text-3xl font-bold'>{t.title}</h1>
-            <div className='flex items-center'>
-                <button
-                  className={`w-10 border-1 border-gray-300 rounded p-1 mr-1 ${language==='pt' ? 'bg-gray-300 text-sky-900' : 'hover:bg-gray-300 hover:text-sky-900'}`}
-                  onClick={() => setLanguage('pt')}
-                >PT</button>
-                <button
-                  className={`w-10 p-1 rounded mr-1 ${language==='en' ? 'bg-gray-300 text-sky-900' : 'hover:bg-gray-300 hover:text-sky-900'}`}
-                  onClick={() => setLanguage('en')}
-                >EN</button>
+            <div>
+                <span className='text-xs underline'>gabrielzanella.com.br</span>
+                <h1 className='text-2xl font-bold mt-1'>{t.title}</h1>
+            </div>
+            <div className='flex flex-col gap-2'>
+                <div className='flex gap-1'>
+                    <button
+                      className={`w-8 h-8 text-xs border-1 border-gray-300 rounded p-1 ${language==='pt' ? 'bg-gray-300 text-sky-900' : 'hover:bg-gray-300 hover:text-sky-900'}`}
+                      onClick={() => setLanguage('pt')}
+                    >PT</button>
+                    <button
+                      className={`w-8 h-8 text-xs p-1 rounded ${language==='en' ? 'bg-gray-300 text-sky-900' : 'hover:bg-gray-300 hover:text-sky-900'}`}
+                      onClick={() => setLanguage('en')}
+                    >EN</button>
+                </div>
                 <button 
                   onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-                  className='flex items-center hover:text-sky-500 transition-colors'
+                  className='flex items-center justify-center hover:text-sky-500 transition-colors'
                   aria-label="Toggle theme"
                 >
-                  <FontAwesomeIcon className='text-xl mx-1' icon={theme === 'light' ? faMoon : faSun}/>
+                  <FontAwesomeIcon className='text-lg' icon={theme === 'light' ? faMoon : faSun}/>
                 </button>
             </div>
         </div>
+        
         <div className='mb-6'>
-            <h2 className='text-2xl mb-4 font-semibold text-sky-500'>{t.role}</h2>
-            <div className={`space-y-3 leading-relaxed ${theme === 'light' ? 'text-gray-700' : 'text-gray-300'}`}>
+            <h2 className='text-xl mb-3 font-semibold text-sky-500'>{t.role}</h2>
+            <div className={`space-y-3 text-sm leading-relaxed ${theme === 'light' ? 'text-gray-700' : 'text-gray-300'}`}>
               {t.about.map((txt, i) => (<p key={i}>{txt}</p>))}
             </div>
         </div>
-        <div className='flex flex-wrap gap-2 items-center mb-5'>
+        
+        <div className='mb-6'>
             <a 
               href={language === 'pt' ? '/Gabriel Zanella - CV.pdf' : '/Gabriel Zanella - RESUME.pdf'} 
               download={language === 'pt' ? 'Gabriel Zanella - CV.pdf' : 'Gabriel Zanella - RESUME.pdf'}
-              className='bg-sky-700 border-1 border-gray-300 rounded py-1 px-3 h-8 hover:bg-sky-800 text-white flex items-center transition-colors'
+              className='bg-sky-700 border-1 border-gray-300 rounded py-2 px-4 hover:bg-sky-800 text-white flex items-center justify-center w-full text-sm'
             >
               {t.curriculum}
             </a>
-            <div className='flex gap-2 items-center'>
-              <a href={myLinks[0].url} target='_blank' className='flex items-center'><FontAwesomeIcon className='text-4xl hover:text-gray-400 transition-colors' icon={faGithubSquare}/></a>
-              <a href={myLinks[1].url} target='_blank' className='flex items-center'><FontAwesomeIcon className='text-4xl hover:text-gray-400 transition-colors' icon={faLinkedin}/></a>
-              <a href={myLinks[2].url} className='flex items-center'><FontAwesomeIcon className='text-4xl hover:text-gray-400 transition-colors' icon={faEnvelopeSquare}/></a>
-              <a href={myLinks[3].url} target='_blank' className='flex items-center'><FontAwesomeIcon className='text-4xl hover:text-gray-400 transition-colors' icon={faWhatsappSquare}/></a>
-            </div>
-            <span className='flex items-center gap-1 text-sm'>
-              <FontAwesomeIcon className='text-lg' icon={faMobileAlt}/> 
-              {myLinks[4].url}
-            </span>
         </div>
+        
+        <div className='flex justify-center gap-4 mb-6'>
+            <a href={myLinks[0].url} target='_blank' className='flex items-center'><FontAwesomeIcon className='text-3xl hover:text-gray-400' icon={faGithubSquare}/></a>
+            <a href={myLinks[1].url} target='_blank' className='flex items-center'><FontAwesomeIcon className='text-3xl hover:text-gray-400' icon={faLinkedin}/></a>
+            <a href={myLinks[2].url} className='flex items-center'><FontAwesomeIcon className='text-3xl hover:text-gray-400' icon={faEnvelopeSquare}/></a>
+            <a href={myLinks[3].url} target='_blank' className='flex items-center'><FontAwesomeIcon className='text-3xl hover:text-gray-400' icon={faWhatsappSquare}/></a>
+        </div>
+        
+        <div className='text-center mb-4'>
+            <span className='flex items-center justify-center gap-2 text-sm'><FontAwesomeIcon icon={faMobileAlt}/> {myLinks[4].url}</span>
+        </div>
+        
         <div>
-            <ul className='gap-2 flex flex-col'>
+            <ul className='gap-2 flex flex-col text-sm'>
                 <li><b className='text-sky-500'>Front-End:</b> HTML, CSS, JavaScript, React, React Native, Next.js, TailwindCSS</li>
                 <li><b className='text-sky-500'>Back-End:</b> Python, FlaskAPI, FastAPI, PHP</li>
                 <li><b className='text-sky-500'>Database:</b> SQL Database, SQL Server, PostgreSQL</li>
@@ -98,8 +105,8 @@ function MyInfo() {
                 <li><b className='text-sky-500'>Other:</b> Azure DevOps, Github DevOps, Docker</li>
             </ul>
         </div>
-    </section>
+    </div>
   )
 }
 
-export default MyInfo
+export default MobileMyInfo
