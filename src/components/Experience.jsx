@@ -18,8 +18,8 @@ const experiences = [
       en: 'Full-time'
     },
     period: {
-      pt: 'set de 2025 — o momento · 2 meses',
-      en: 'Sep 2025 — Present · 2 months'
+      pt: 'set de 2025 — o momento · 7 meses',
+      en: 'Sep 2025 — Present · 7 months'
     },
     bullets: {
       pt: [

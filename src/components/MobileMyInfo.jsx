@@ -18,22 +18,22 @@ function MobileMyInfo() {
     const t = {
         pt: {
             title: 'Gabriel Zanella',
-            role: 'Desenvolvedor Full Stack',
+            role: 'Desenvolvedor Full Stack | React • Python • Azure',
             about: [
-                'Sou Analista de Dados e Desenvolvedor Web Full Stack, atualmente trabalhando como Analista de Dados Pleno na NBS Latam, onde desenvolvo aplicações e softwares utilizando a Power Platform da Microsoft (Power BI, Power Apps e Power Automate), otimizando processos e melhorando a eficiência operacional.',
-                'Trabalho diretamente com clientes e stakeholders para definir requisitos, modelar fluxos de processos e desenvolver mockups, aplicando metodologias ágeis como SCRUM.',
-                'Minha expertise vai além da Power Platform. Possuo conhecimento sólido em desenvolvimento web, com proficiência em HTML, CSS, Javascript, React.js, Typescript, Next.js, PHP e Python.',
+                'Desenvolvedor Full Stack com mais de 5 anos de experiência construindo aplicações web escaláveis e soluções digitais. Atualmente na Nestlé como Senior Data Analyst / Software Developer, liderando iniciativas de desenvolvimento web e criando aplicações full stack com React, Python e Microsoft Azure.',
+                'Possuo forte background em analytics, cloud e automação de processos, com experiência em conectar necessidades de negócio a soluções técnicas. Trabalho diretamente com stakeholders para definição de requisitos, arquitetura de soluções e entrega de valor real.',
+                'Meu stack principal inclui React, Python (FastAPI, Flask), Microsoft Azure, Azure DevOps, PostgreSQL, Power Platform e TypeScript. Aberto a oportunidades internacionais.',
             ],
             curriculum: 'Currículo',
             phoneLabel: '',
         },
         en: {
             title: 'Gabriel Zanella',
-            role: 'Full Stack Developer',
+            role: 'Full Stack Developer | React • Python • Azure',
             about: [
-                "I'm a Data Analyst and Full Stack Web Developer. I build apps and software using Microsoft's Power Platform (Power BI, Power Apps, Power Automate), optimizing processes and operational efficiency.",
-                'I work directly with clients and stakeholders to define requirements, model process flows, and develop mockups, applying agile methodologies such as SCRUM.',
-                'Beyond the Power Platform, I have solid web development skills with HTML, CSS, JavaScript, React.js, TypeScript, Next.js, PHP, and Python.',
+                'Full Stack Software Developer with 5+ years of experience building scalable web applications and digital solutions. Currently at Nestlé as Senior Data Analyst / Software Developer, leading web development initiatives and building full-stack applications with React, Python, and Microsoft Azure.',
+                'Strong background in data analytics, cloud solutions, and process automation — with experience bridging business needs and technical delivery. I work directly with stakeholders to define requirements, design architectures, and ship real value.',
+                'My core stack includes React, Python (FastAPI, Flask), Microsoft Azure, Azure DevOps, PostgreSQL, Power Platform, and TypeScript. Open to international opportunities.',
             ],
             curriculum: 'Resume',
             phoneLabel: '',
@@ -98,11 +98,11 @@ function MobileMyInfo() {
         
         <div>
             <ul className='gap-2 flex flex-col text-sm'>
-                <li><b className='text-sky-500'>Front-End:</b> HTML, CSS, JavaScript, React, React Native, Next.js, TailwindCSS</li>
-                <li><b className='text-sky-500'>Back-End:</b> Python, FlaskAPI, FastAPI, PHP</li>
-                <li><b className='text-sky-500'>Database:</b> SQL Database, SQL Server, PostgreSQL</li>
-                <li><b className='text-sky-500'>Cloud:</b> Microsoft Azure</li>
-                <li><b className='text-sky-500'>Other:</b> Azure DevOps, Github DevOps, Docker</li>
+                <li><b className='text-sky-500'>Front-End:</b> React, React Native, TypeScript, JavaScript, Next.js, TailwindCSS, HTML, CSS</li>
+                <li><b className='text-sky-500'>Back-End:</b> Python, FastAPI, Flask</li>
+                <li><b className='text-sky-500'>Database:</b> PostgreSQL, SQL Server</li>
+                <li><b className='text-sky-500'>Cloud & DevOps:</b> Microsoft Azure, Azure DevOps, CI/CD, Git</li>
+                <li><b className='text-sky-500'>Other:</b> Power BI, Power Apps, Power Automate, SCRUM</li>
             </ul>
         </div>
     </div>
